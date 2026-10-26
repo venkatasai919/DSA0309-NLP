@@ -1,0 +1,32 @@
+
+import re
+
+text = "Python programming is easy. My number is 9876543210."
+
+# Match a word at the beginning
+result1 = re.match(r"Python", text)
+
+if result1:
+    print("Match found:", result1.group())
+else:
+    print("No match found at the beginning")
+
+# Search for a word anywhere
+result2 = re.search(r"programming", text)
+
+if result2:
+    print("Search found:", result2.group())
+else:
+    print("Word not found")
+
+# Find all words starting with 'P'
+result3 = re.findall(r"\bP\w*", text)
+print("Words starting with P:", result3)
+
+# Find a 10-digit phone number
+result4 = re.search(r"\d{10}", text)
+
+if result4:
+    print("Phone number:", result4.group())
+else:
+    print("Phone number not found")
